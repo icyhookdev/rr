@@ -8,7 +8,6 @@ const GetPostsList = () => {
   useEffect(() => {
     jsonPlaceHolderApi.get('/posts').then(res => setPosts(res.data));
   }, []);
-  console.log(users);
 
   return <Posts posts={posts} />;
 };
