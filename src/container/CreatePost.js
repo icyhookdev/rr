@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import useInput from '../hooks/useInput';
 import Form from '../components/Form/Form';
 import jsonPlaceholderApi from '../api/jsonPlaceholderApi';
@@ -18,10 +19,13 @@ const CreatePost = () => {
   const submitPost = postData => {
     jsonPlaceholderApi.post('/posts', postData).then(({ data }) => {
       if (posts) {
-        return localStorage.setItem('posts', JSON.stringify([...posts, data]));
+        localStorage.setItem('posts', JSON.stringify([...posts, data]));
+        navigate('/');
+        return;
       }
 
       localStorage.setItem('posts', JSON.stringify([data]));
+      navigate('/');
     });
   };
 
