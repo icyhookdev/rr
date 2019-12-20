@@ -6,27 +6,30 @@ Interview code test, Only will be provide it the Blog Web App
 
 ### Step 1
 
-```
+```git
 Clone the Repo
 ```
 
 ### Step 2 
-
-```
-change the  branch to post : git chekcout post
+change the  branch to blog 
+```git
+ git chekcout blog
 
 ```
 
 ### Step 3
-
-```
-use npm i to install dependencies
-
+install dependencies
+```git
+npm i 
 ```
 
 ### Step 4
-
+run
+```git
+ npm run dev 
 ```
-run npm run dev and go to localhost:8080
 
+go to 
+```git
+localhost:8080
 ```
