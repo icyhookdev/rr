@@ -6,10 +6,19 @@ const GetPostsList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    jsonPlaceHolderApi.get('/posts').then(res => setPosts(res.data));
+    jsonPlaceHolderApi.get('/posts').then(res => {
+      const createdPosts = JSON.parse(localStorage.getItem('posts'));
+
+      if (createdPosts) {
+        const fetchedPosts = [...createdPosts, ...res.data];
+        return setPosts(fetchedPosts);
+      }
+
+      setPosts(res.data);
+    });
   }, []);
 
-  return <Posts posts={posts} />;
+  return <Posts posts={posts} setPosts={setPosts} />;
 };
 
 export default GetPostsList;
