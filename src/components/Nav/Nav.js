@@ -9,6 +9,9 @@ const Nav = () => (
       <NavItem>
         <Link to="/posts">Posts</Link>
       </NavItem>
+      <NavItem>
+        <Link to="/create">create</Link>
+      </NavItem>
     </NavItems>
   </StyledNav>
 );
